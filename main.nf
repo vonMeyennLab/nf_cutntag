@@ -150,16 +150,16 @@ file_ch = makeFilesChannel(input_files)
 /* ========================================================================================
     WORKFLOW
 ======================================================================================== */
-include { FASTQC }             from './nf_modules/fastqc.mod.nf'
-include { FASTQC as FASTQC2 }  from './nf_modules/fastqc.mod.nf'
-include { FASTQ_SCREEN }       from './nf_modules/fastq_screen.mod.nf'
-include { TRIM_GALORE }        from './nf_modules/trim_galore.mod.nf'
-include { BOWTIE2 }            from './nf_modules/bowtie2.mod.nf'  params(bam_output: false, genome: genome)
-include { SAMTOOLS_SORT }      from './nf_modules/samtools.mod.nf' params(bam_output: params.bam_output)
-include { SAMTOOLS_INDEX }     from './nf_modules/samtools.mod.nf' params(bam_output: params.bam_output)
-include { MARK_DUPLICATES }    from './nf_modules/picard.mod.nf'   params(bam_output: params.bam_output)
-include { BEDTOOLS_GENOMECOV } from './nf_modules/bedtools.mod.nf'
-include { MULTIQC }            from './nf_modules/multiqc.mod.nf'
+include { FASTQC }             from './modules/fastqc.mod.nf'
+include { FASTQC as FASTQC2 }  from './modules/fastqc.mod.nf'
+include { FASTQ_SCREEN }       from './modules/fastq_screen.mod.nf'
+include { TRIM_GALORE }        from './modules/trim_galore.mod.nf'
+include { BOWTIE2 }            from './modules/bowtie2.mod.nf'  params(bam_output: false, genome: genome)
+include { SAMTOOLS_SORT }      from './modules/samtools.mod.nf' params(bam_output: params.bam_output)
+include { SAMTOOLS_INDEX }     from './modules/samtools.mod.nf' params(bam_output: params.bam_output)
+include { MARK_DUPLICATES }    from './modules/picard.mod.nf'   params(bam_output: params.bam_output)
+include { BEDTOOLS_GENOMECOV } from './modules/bedtools.mod.nf'
+include { MULTIQC }            from './modules/multiqc.mod.nf'
 
 workflow {
 
