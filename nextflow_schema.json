@@ -19,7 +19,7 @@
                     "type": "string",
                     "format": "file-path",
                     "mimetype": "text/plain",
-                    "description": "Path to the folder where the FASTQ files are located. You have to use an absolute path and list the files by using a wildcard or the name of a single file.\n\nFor example: /cluster/work/nme/data/josousa/project/fastq/*fastq.gz",
+                    "description": "Path to the folder where the FASTQ files are located. You have to use an absolute path and list the files by using a wildcard or the name of a single file.\nFor example: /cluster/work/nme/data/josousa/project/fastq/*fastq.gz",
                     "fa_icon": "fas fa-file-code"
                 },
 

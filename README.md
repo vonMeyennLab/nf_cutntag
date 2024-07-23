@@ -120,14 +120,14 @@ Output directory where the files will be saved.
 
     `--picard_markduplicates_remove_duplicates` _Default: false_
 
-- Option to remove 'optical' duplicates and other duplicates that appear to have arisen from the sequencing process instead of the library preparation process, even if REMOVE_DUPLICATES is false. If REMOVE_DUPLICATES is true, all duplicates are removed and this option is ignored..
+- Option to remove 'optical' duplicates and other duplicates that appear to have arisen from the sequencing process instead of the library preparation process, even if REMOVE_DUPLICATES is false. If REMOVE_DUPLICATES is true, all duplicates are removed and this option is ignored.
 
     `--picard_markduplicates_remove_sequencing_duplicates` _Default: false_
 
 
 ## bedtools genomecov optional parameters
 
-- Option to report depth in BedGraph format, as above (-bg). However with this option, regions with zero coverage are also reported. This allows one to quickly extract all regions of a genome with 0 coverage by applying: 'grep -w 0$' to the output..
+- Option to report depth in BedGraph format, as above (-bg). However with this option, regions with zero coverage are also reported. This allows one to quickly extract all regions of a genome with 0 coverage by applying: 'grep -w 0$' to the output.
 
     `--bedtools_genomecov_bga` _Default: true_
 

@@ -123,7 +123,7 @@ if (params.bedtools_genomecov_bga) {
 	bedtools_genomecov_args += " -bga "
 }
 /* ==========
-Report depth in BedGraph format, as above (-bg).
+Report depth in BedGraph format, as '-bg'.
 However with this option, regions with zero
 coverage are also reported. This allows one to
 quickly extract all regions of a genome with 0
