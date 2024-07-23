@@ -19,7 +19,7 @@
                     "type": "string",
                     "format": "file-path",
                     "mimetype": "text/plain",
-                    "description": "Path to the folder where the FASTQ files are located. You have to use an absolute path and list the files by using a wildcard or the name of a single file.\nFor example: /cluster/work/nme/data/josousa/project/fastq/*fastq.gz",
+                    "description": "Path to the folder where the FASTQ files are located. You have to use an absolute path and list the files by using a wildcard or the name of a single file.\nExample: /cluster/work/nme/data/josousa/project/fastq/*fastq.gz",
                     "fa_icon": "fas fa-file-code"
                 },
 
@@ -58,7 +58,7 @@
 
                 "custom_genome_file": {
                     "type": "string",
-                    "description": "Absolute path to a custom genome file.\nFor example: /cluster/work/nme/data/josousa/project/genome/CHM13.genome.\nThis option will override the genome selected above.",
+                    "description": "Absolute path to a custom genome file. This option will override the genome selected above.\nExample: /cluster/work/nme/data/josousa/project/genome/CHM13.genome",
                     "fa_icon": "fas fa-book"
                 }
 
