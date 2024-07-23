@@ -1,0 +1,13 @@
+reports:
+  "**/multiqc_report.html":
+    display: "MultiQC HTML report"
+  "**/*_screen.html":
+    display: "FastQ Screen HTML report"
+  "**/*_fastqc.html":
+    display: "FastQC HTML report"
+  "**/execution_timeline.html":
+    display: "Execution timeline"
+  "**/execution_report.html":
+    display: "Execution report"
+  "**/execution_trace.txt":
+    display: "Execution trace"

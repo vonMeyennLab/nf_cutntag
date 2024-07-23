@@ -1,0 +1,257 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/vonMeyennLab/nf_cutntag/main/nextflow_schema.json",
+    "title": "CUT&Tag pipeline parameters",
+    "description": "CUT&Tag sequencing pipeline.",
+    "type": "object",
+
+    "definitions": {
+
+        "input_output_options": {
+            "title": "Input/output options",
+            "type":  "object",
+            "fa_icon": "fas fa-terminal",
+            "description": "Define where the pipeline should find input data and save output data.",
+            "required": ["input", "outdir"],
+            "properties": {
+
+                "input": {
+                    "type": "string",
+                    "format": "file-path",
+                    "mimetype": "text/plain",
+                    "description": "Path to the folder where the FASTQ files are located. You have to use an absolute path and list the files by using a wildcard or the name of a single file.\n\nFor example: /cluster/work/nme/data/josousa/project/fastq/*fastq.gz",
+                    "fa_icon": "fas fa-file-code"
+                },
+
+                "single_end": {
+                    "type": "boolean",
+                    "fa_icon": "fas fa-users-cog",
+                    "description": "Force the pipeline to assign input as single-end. By default, the pipeline detects whether the input files are single-end or paired-end.",
+                    "default": false
+                },
+
+                "outdir": {
+                    "type": "string",
+                    "format": "directory-path",
+                    "description": "The output directory where the results will be saved. You have to use an absolute path.",
+                    "fa_icon": "fas fa-folder-open"
+                }
+
+            }
+        },
+
+        "reference_genome_options": {
+            "title": "Reference genome options",
+            "type": "object",
+            "fa_icon": "fas fa-dna",
+            "required": ["genome"],
+            "description": "Reference genome used for alignment.",
+            "properties": {
+
+                "genome": {
+                    "type": "string",
+                    "default": "GRCm39",
+                    "description": "Name of the reference genome.",
+                    "fa_icon": "fas fa-book",
+                    "enum": ["GRCm39", "GRCm38", "GRCh38", "GRCh37", "panTro6", "CHIMP2.1.4", "BDGP6", "susScr11", "Rnor_6.0", "R64-1-1", "TAIR10", "WBcel235", "E_coli_K_12_DH10B", "E_coli_K_12_MG1655", "Vectors", "Lambda", "PhiX", "Mitochondria"]
+                },
+
+                "custom_genome_file": {
+                    "type": "string",
+                    "description": "Absolute path to a custom genome file. For example: /cluster/work/nme/data/josousa/project/genome/CHM13.genome. This option will override the genome selected above.",
+                    "fa_icon": "fas fa-book"
+                }
+
+            }
+        },
+
+        "fastq_screen_options": {
+            "title": "FastQ Screen options",
+            "type": "object",
+            "fa_icon": "fas fa-users-cog",
+            "description": "Choose the FastQ Screen options.",
+            "properties": {
+
+                "fastq_screen_conf": {
+                    "type": "string",
+                    "default": "/cluster/work/nme/software/config/fastq_screen.conf",
+                    "description": "FastQ Screen config file directory.",
+                    "fa_icon": "fas fa-book"
+                }
+
+            }
+        },
+
+        "bowtie2_options": {
+            "title": "Bowtie2 options",
+            "type": "object",
+            "fa_icon": "fas fa-users-cog",
+            "description": "Choose the bowtie2 aligner options.",
+            "properties": {
+
+                "bowtie2_no_unal": {
+                    "type": "boolean",
+                    "fa_icon": "fas fa-file-code",
+                    "description": "Bowtie2 parameter: --no-unal. Suppress SAM records for unaligned reads.",
+                    "default": true
+                }
+
+            }
+        },
+
+        "picard_markduplicates_options": {
+            "title": "picard MarkDuplicates options",
+            "type": "object",
+            "fa_icon": "fas fa-users-cog",
+            "description": "Choose the picard MarkDuplicates options.",
+            "properties": {
+
+                "picard_markduplicates_remove_duplicates": {
+                    "type": "boolean",
+                    "description": "If true do not write duplicates to the output file instead of writing them with appropriate flags set.",
+                    "fa_icon": "fas fa-file-code",
+                    "default": false
+                },
+
+                "picard_markduplicates_remove_sequencing_duplicates": {
+                    "type": "boolean",
+                    "fa_icon": "fas fa-file-code",
+                    "description": "If true remove 'optical' duplicates and other duplicates that appear to have arisen from the sequencing process instead of the library preparation process, even if REMOVE_DUPLICATES is false. If REMOVE_DUPLICATES is true, all duplicates are removed and this option is ignored.",
+                    "default": false
+                }
+
+            }
+        },
+
+        "bedtools_genomecov_options": {
+            "title": "bedtools genomecov options",
+            "type": "object",
+            "fa_icon": "fas fa-users-cog",
+            "description": "Choose the bedtools genomecov options.",
+            "properties": {
+
+                "bedtools_genomecov_bga": {
+                    "type": "boolean",
+                    "description": "Report depth in BedGraph format, as above (-bg). However with this option, regions with zero coverage are also reported. This allows one to quickly extract all regions of a genome with 0 coverage by applying: 'grep -w 0$' to the output.",
+                    "fa_icon": "fas fa-file-code",
+                    "default": true
+                }
+
+            }
+        },
+        
+        "process_skipping_options": {
+            "title": "Process skipping options",
+            "type": "object",
+            "fa_icon": "fas fa-fast-forward",
+            "description": "Skip and add various steps within the workflow.",
+            "properties": {
+
+                "skip_qc": {
+                    "type": "boolean",
+                    "fa_icon": "fas fa-fast-forward",
+                    "description": "Skip FastQC, TrimGalore, and FastQ Screen. The first step of the pipeline will be the Bismark alignment."
+                },
+
+                "skip_fastq_screen": {
+                    "type": "boolean",
+                    "fa_icon": "fas fa-fast-forward",
+                    "description": "Skip FastQ Screen.",
+                    "default": true
+                }
+
+            }
+        },
+
+        "module_arguments_options": {
+            "title": "Module arguments options",
+            "type": "object",
+            "fa_icon": "fas fa-terminal",
+            "description": "Add extra arguments to the workflow modules.",
+            "properties": {
+
+                "fastqc_args": {
+                    "type": "string",
+                    "description": "FastQC arguments.",
+                    "fa_icon": "fas fa-file-code"
+                },
+
+                "fastq_screen_args": {
+                    "type": "string",
+                    "description": "FastQ Screen arguments.",
+                    "fa_icon": "fas fa-file-code"
+                },
+
+                "trim_galore_args": {
+                    "type": "string",
+                    "description": "Trim Galore arguments.",
+                    "fa_icon": "fas fa-file-code"
+                },
+
+                "bowtie2_args": {
+                    "type": "string",
+                    "description": "Bowtie2 arguments.",
+                    "fa_icon": "fas fa-file-code",
+                    "default": "--local --very-sensitive-local --minins 10 --maxins 700"
+                },
+
+                "samtools_sort_args": {
+                    "type": "string",
+                    "description": "Samtools sort arguments.",
+                    "fa_icon": "fas fa-file-code"
+                },
+
+                "samtools_index_args": {
+                    "type": "string",
+                    "description": "Samtools index arguments.",
+                    "fa_icon": "fas fa-file-code"
+                },
+
+                "mark_duplicates_args": {
+                    "type": "string",
+                    "description": "picard MarkDuplicates arguments.",
+                    "fa_icon": "fas fa-file-code"
+                },
+
+                "bedtools_genomecov_args": {
+                    "type": "string",
+                    "description": "bedtools genomecov arguments.",
+                    "fa_icon": "fas fa-file-code"
+                },
+
+                "multiqc_args": {
+                    "type": "string",
+                    "description": "MultiQC arguments.",
+                    "fa_icon": "fas fa-file-code"
+                }
+            }
+        }
+
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/input_output_options"
+        },
+        {
+            "$ref": "#/definitions/reference_genome_options"
+        },
+        {
+            "$ref": "#/definitions/fastq_screen_options"
+        },
+        {
+            "$ref": "#/definitions/bowtie2_options"
+        },
+        {
+            "$ref": "#/definitions/picard_markduplicates_options"
+        },
+        {
+            "$ref": "#/definitions/bedtools_genomecov_options"
+        },
+        {
+            "$ref": "#/definitions/process_skipping_options"
+        },
+        {
+            "$ref": "#/definitions/module_arguments_options"
+        }
+    ]
+}    
