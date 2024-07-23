@@ -24,13 +24,13 @@ A Nextflow pipeline to perform quality control, alignment, and feature coverage 
 ## Required parameters
 
 Path to the folder where the FASTQ files are located.
-`--input`
+
 ``` bash
 --input /cluster/work/nme/data/josousa/project/fastq/*fastq.gz
 ```
 
 Output directory where the files will be saved.
-`--outdir`
+
 ``` bash
 --outdir /cluster/work/nme/data/josousa/project
 ```
@@ -39,14 +39,16 @@ Output directory where the files will be saved.
 ## Input optional parameters
 
 - Option to force the pipeline to assign input as single-end.
-`--single_end`
+
+    `--single_end`
 
     >_By default, the pipeline detects whether the input files are single-end or paired-end._
 
 
 ## Genomes
 - Reference genome used for alignment.
-`--genome`
+
+    `--genome`
 
     Available genomes:
     ``` bash
@@ -103,7 +105,8 @@ Output directory where the files will be saved.
 ## Bowtie2 optional parameters
 
 - Option to suppress SAM records for unaligned reads.
-`--bowtie2_no_unal` _Default: true_
+
+    `--bowtie2_no_unal` _Default: true_
 
 - By default, Bowtie2 has the following parameters adapted for CutnTag sequencing:
     ``` bash
@@ -114,24 +117,29 @@ Output directory where the files will be saved.
 ## picard MarkDuplicates optional parameters
 
 - Option to not write duplicates to the output file instead of writing them with appropriate flags set.
-`--picard_markduplicates_remove_duplicates` _Default: false_
+
+    `--picard_markduplicates_remove_duplicates` _Default: false_
 
 - Option to remove 'optical' duplicates and other duplicates that appear to have arisen from the sequencing process instead of the library preparation process, even if REMOVE_DUPLICATES is false. If REMOVE_DUPLICATES is true, all duplicates are removed and this option is ignored..
-`--picard_markduplicates_remove_sequencing_duplicates` _Default: false_
+
+    `--picard_markduplicates_remove_sequencing_duplicates` _Default: false_
 
 
 ## bedtools genomecov optional parameters
 
 - Option to report depth in BedGraph format, as above (-bg). However with this option, regions with zero coverage are also reported. This allows one to quickly extract all regions of a genome with 0 coverage by applying: 'grep -w 0$' to the output..
-`--bedtools_genomecov_bga` _Default: true_
+
+    `--bedtools_genomecov_bga` _Default: true_
 
 
 ## Skipping options
 - Option to skip FastQC, TrimGalore, and FastQ Screen. The first step of the pipeline will be the Bismark alignment. 
-`--skip_qc`
+
+    `--skip_qc`
 
 - Option to skip FastQ Screen. 
-`--skip_fastq_screen`
+    
+    `--skip_fastq_screen`
 
 
 ## Extra arguments
