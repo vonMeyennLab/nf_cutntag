@@ -43,6 +43,6 @@ process MARK_DUPLICATES {
 		}
 
 		"""
-		picard MarkDuplicates INPUT=${bam} OUTPUT=${output_name} ASSUME_SORTED=true METRICS_FILE=${base_name}.MarkDuplicates.metrics.txt ${mark_duplicates_args}
+		java -jar /usr/picard/picard.jar MarkDuplicates INPUT=${bam} OUTPUT=${output_name} ASSUME_SORTED=true METRICS_FILE=${base_name}.MarkDuplicates.metrics.txt ${mark_duplicates_args}
 		"""
 }
