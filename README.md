@@ -79,18 +79,10 @@ Output directory where the files will be saved.
     ```
 
     Example of a genome file:
-    ``` bash    
-    name           GRCm39                                                                      
-    species        Mouse                                                                       
-    fasta          /cluster/work/nme/genomes/Mus_musculus/Ensembl/GRCm39/Sequence/WholeGenomeFasta/           
-    bismark        /cluster/work/nme/genomes/Mus_musculus/Ensembl/GRCm39/Sequence/BismarkIndex/               
-    bowtie         /cluster/work/nme/genomes/Mus_musculus/Ensembl/GRCm39/Sequence/BowtieIndex/genome          
-    bowtie2        /cluster/work/nme/genomes/Mus_musculus/Ensembl/GRCm39/Sequence/Bowtie2Index/genome         
-    star           /cluster/work/nme/genomes/Mus_musculus/Ensembl/GRCm39/Sequence/STARIndex/            
-    bwa            /cluster/work/nme/genomes/Mus_musculus/Ensembl/GRCm39/Sequence/BWAIndex/genome             
-    hisat2         /cluster/work/nme/genomes/Mus_musculus/Ensembl/GRCm39/Sequence/Hisat2Index/genome          
-    hisat2_splices /cluster/work/nme/genomes/Mus_musculus/Ensembl/GRCm39/Sequence/Hisat2Index/splice_sites.txt
-    gtf            /cluster/work/nme/genomes/Mus_musculus/Ensembl/GRCm39/Annotation/Genes/genes.gtf           
+    ``` bash
+    name           GRCm39
+    species        Mouse
+    bowtie2        /cluster/work/nme/genomes/Mus_musculus/Ensembl/GRCm39/Sequence/Bowtie2Index/genome
     ```
 
 

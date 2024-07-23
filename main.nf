@@ -177,7 +177,7 @@ workflow {
             FASTQC2                         (TRIM_GALORE.out.reads, outdir, fastqc_args)
             BOWTIE2                         (TRIM_GALORE.out.reads, outdir, bowtie2_args)
         } else {
-            BOWTIE2                         (file_ch.out.reads, outdir, bowtie2_args)
+            BOWTIE2                         (file_ch, outdir, bowtie2_args)
         }
         SAMTOOLS_SORT        (BOWTIE2.out.bam, outdir,samtools_sort_args)
         MARK_DUPLICATES      (SAMTOOLS_SORT.out.bam, outdir, mark_duplicates_args)
