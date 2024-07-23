@@ -16,7 +16,7 @@ process BOWTIE2 {
 		label 'bowtie2'
 		tag "$name" // Adds name to job submission
 
-		container 'docker://staphb/bowtie2:2.5.4'
+		container 'docker://josousa/bowtie2:2.5.4'
 
 	input:
 		tuple val(name), path(reads)
