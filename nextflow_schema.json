@@ -150,7 +150,7 @@
                 "skip_qc": {
                     "type": "boolean",
                     "fa_icon": "fas fa-fast-forward",
-                    "description": "Skip FastQC, TrimGalore, and FastQ Screen. The first step of the pipeline will be the Bismark alignment."
+                    "description": "Skip FastQC, TrimGalore, and FastQ Screen. The first step of the pipeline will be the alignment."
                 },
 
                 "skip_fastq_screen": {

@@ -36,7 +36,7 @@ Output directory where the files will be saved.
 ```
 
 
-## Input optional parameters
+### Input optional parameters
 
 - Option to force the pipeline to assign input as single-end.
 
@@ -119,7 +119,7 @@ Output directory where the files will be saved.
 
 ## bedtools genomecov optional parameters
 
-- Option to report depth in BedGraph format, as above (-bg). However with this option, regions with zero coverage are also reported. This allows one to quickly extract all regions of a genome with 0 coverage by applying: 'grep -w 0$' to the output.
+- Option to report depth in BedGraph format, as the option '-bg'. However with this option, regions with zero coverage are also reported. This allows one to quickly extract all regions of a genome with 0 coverage by applying: 'grep -w 0$' to the output.
 
     `--bedtools_genomecov_bga` _Default: true_
 
