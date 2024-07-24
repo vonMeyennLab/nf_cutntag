@@ -10,7 +10,7 @@ process MARK_DUPLICATES {
 	label 'picard'
 	tag "$bam" // Adds name to job submission
 
-	container 'docker://quay.io/biocontainers/picard:3.2.0--hdfd78af_0'
+	container 'docker://agrf/picard:2.18.27'
 
 	input:
 		path(bam)
@@ -43,6 +43,6 @@ process MARK_DUPLICATES {
 		}
 
 		"""
-		picard MarkDuplicates INPUT=${bam} OUTPUT=${output_name} ASSUME_SORTED=true READ_NAME_REGEX=null METRICS_FILE=${base_name}.MarkDuplicates.metrics.txt ${mark_duplicates_args}
+		picard MarkDuplicates INPUT=${bam} OUTPUT=${output_name} ASSUME_SORTED=true METRICS_FILE=${base_name}.MarkDuplicates.metrics.txt ${mark_duplicates_args}
 		"""
 }
