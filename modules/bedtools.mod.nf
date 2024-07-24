@@ -24,6 +24,9 @@ process BEDTOOLS_GENOMECOV {
     script:
 		"""
 		bedtools genomecov ${bedtools_genomecov_args} -ibam ${bam} > ${bam}.bedgraph
-		rename .bam.bedgraph .bedgraph *
+		
+		for file in *.bam.bedgraph; do
+			mv "$file" "${file/.bam.bedgraph/.bedgraph}"
+		done
     	"""
 }
