@@ -10,7 +10,7 @@ process MARK_DUPLICATES {
 	label 'picard'
 	tag "$bam" // Adds name to job submission
 
-	container 'docker://broadinstitute/picard:3.2.0'
+	container 'docker://quay.io/biocontainers/picard:3.2.0--hdfd78af_0'
 
 	input:
 		path(bam)
