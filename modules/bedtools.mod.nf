@@ -7,26 +7,26 @@ nextflow.enable.dsl=2
 ======================================================================================== */
 process BEDTOOLS_GENOMECOV {
 
-	label 'bedtools'
-	tag "$bam" // Adds name to job submission
+    label 'bedtools'
+    tag "$bam" // Adds name to job submission
 
-	container 'docker://staphb/bedtools:2.31.1'
+    container 'docker://staphb/bedtools:2.31.1'
 
-	input:
-		path(bam)
-		val(outputdir)
-		val(bedtools_genomecov_args)
+    input:
+        path bam
+        val outputdir
+        val bedtools_genomecov_args
 
-	output:
-		path("*bedgraph"), emit: bedgraph
-		publishDir "$outputdir/aligned/bedgraph", mode: "link", overwrite: true
+    output:
+        path "*bedgraph", emit: bedgraph
+        publishDir "$outputdir/aligned/bedgraph", mode: "link", overwrite: true
 
     script:
-		"""
-		bedtools genomecov ${bedtools_genomecov_args} -ibam ${bam} > ${bam}.bedgraph
-		
-		for file in *.bam.bedgraph; do
-			mv "$file" "${file/.bam.bedgraph/.bedgraph}"
-		done
-    	"""
+        """
+        bedtools genomecov ${bedtools_genomecov_args} -ibam ${bam} > ${bam}.bedgraph
+        
+        for file in *.bam.bedgraph; do
+            mv "\$file" "\${file/.bam.bedgraph/.bedgraph}"
+        done
+        """
 }
