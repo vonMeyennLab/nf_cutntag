@@ -2,10 +2,10 @@ name            GRCh38
 species         Human
 fasta           /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/WholeGenomeFasta/
 bismark         /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/BismarkIndex/
-bowtie	        /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/BowtieIndex/Homo_sapiens.GRCh38.dna_sm.primary_assembly
-bowtie2	        /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/Bowtie2Index/Homo_sapiens.GRCh38.dna_sm.primary_assembly
+bowtie	        /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/BowtieIndex/genome
+bowtie2	        /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/Bowtie2Index/genome
 star            /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/STARIndex
-bwa             /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/BWAIndex/Homo_sapiens.GRCh38.dna_sm.primary_assembly
-hisat2	        /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/Hisat2Index/Homo_sapiens.GRCh38.dna_sm.primary_assembly
-hisat2_splices	/cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/Hisat2Index/Homo_sapiens.GRCh38.dna_sm.primary_assembly_splice_sites.txt
-gtf	            /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Annotation/Genes/Homo_sapiens.GRCh38.110.gtf
+bwa             /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/BWAIndex/genome
+hisat2	        /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/Hisat2Index/genome
+hisat2_splices	/cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/Hisat2Index/splice_sites.txt
+gtf	            /cluster/work/nme/genomes/Homo_sapiens/NCBI/GRCh38/Annotation/Genes/genes.gtf
