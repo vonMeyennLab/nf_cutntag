@@ -1,7 +1,5 @@
 name	    Vectors
 species	    Vectors
 fasta	    /cluster/work/nme/genomes/Vectors
-bismark	    /cluster/work/nme/genomes/Vectors
-bowtie	    /cluster/work/nme/genomes/Vectors/Vectors
-bowtie2	    /cluster/work/nme/genomes/Vectors/Vectors
-hisat2	    /cluster/work/nme/genomes/Vectors/Vectors
+bismark	    /cluster/work/nme/genomes/Vectors/BismarkIndex/
+bowtie2	    /cluster/work/nme/genomes/Vectors/Vectors/Bowtie2Index/Vectors
