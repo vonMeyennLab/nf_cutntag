@@ -1,8 +1,0 @@
-name            Lambda
-species         Enterobacteriophage_lambda
-fasta           /cluster/work/nme/genomes/Enterobacteriophage_lambda/NCBI/1993-04-28/Sequence/WholeGenomeFasta/
-bismark         /cluster/work/nme/genomes/Enterobacteriophage_lambda/NCBI/1993-04-28/Sequence/BismarkIndex/
-bowtie          /cluster/work/nme/genomes/Enterobacteriophage_lambda/NCBI/1993-04-28/Sequence/BowtieIndex/genome
-bowtie2         /cluster/work/nme/genomes/Enterobacteriophage_lambda/NCBI/1993-04-28/Sequence/Bowtie2Index/genome
-star            /cluster/work/nme/genomes/Enterobacteriophage_lambda/NCBI/1993-04-28/Sequence/STARIndex
-bwa             /cluster/work/nme/genomes/Enterobacteriophage_lambda/NCBI/1993-04-28/Sequence/BWAIndex/genome

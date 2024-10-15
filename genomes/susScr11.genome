@@ -1,6 +1,0 @@
-name	        susScr11
-species	        Sus_scrofa
-fasta           /cluster/work/nme/genomes/Sus_scrofa/Ensembl/Sscrofa11.1/Sequence/WholeGenomeFasta/
-bismark         /cluster/work/nme/genomes/Sus_scrofa/Ensembl/Sscrofa11.1/Sequence/BismarkIndex/
-bowtie2	        /cluster/work/nme/genomes/Sus_scrofa/Ensembl/Sscrofa11.1/Sequence/BOWTIE2Index/
-gtf	            /cluster/work/nme/genomes/Sus_scrofa/Ensembl/Sscrofa11.1/Annotation/Release_90-2017-11-17/Genes/genes.gtf

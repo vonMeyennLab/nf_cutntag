@@ -1,0 +1,4 @@
+name	        GRCm38.p6
+species	        Mus_musculus
+fasta           /cluster/work/nme/genomes/refgenie/alias/Mus_musculus_GRCm38_p6/fasta/ensembl_release_102/
+bowtie2	        /cluster/work/nme/genomes/refgenie/alias/Mus_musculus_GRCm38_p6/bowtie2_index/ensembl_release_102/Mus_musculus_GRCm38_p6

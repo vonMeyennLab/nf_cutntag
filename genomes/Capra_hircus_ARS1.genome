@@ -1,0 +1,4 @@
+name	        ARS1
+species	        Capra_hircus
+fasta           /cluster/work/nme/genomes/refgenie/alias/Capra_hircus_ARS1/fasta/ensembl_release_112/
+bowtie2	        /cluster/work/nme/genomes/refgenie/alias/Capra_hircus_ARS1/bowtie2_index/ensembl_release_112/Capra_hircus_ARS1

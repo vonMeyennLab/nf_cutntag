@@ -1,0 +1,4 @@
+name	        WBcel235
+species	        Caenorhabditis_elegans
+fasta           /cluster/work/nme/genomes/refgenie/alias/Caenorhabditis_elegans_WBcel235/fasta/ensembl_release_112/
+bowtie2	        /cluster/work/nme/genomes/refgenie/alias/Caenorhabditis_elegans_WBcel235/bowtie2_index/ensembl_release_112/Caenorhabditis_elegans_WBcel235

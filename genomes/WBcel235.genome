@@ -1,9 +1,0 @@
-name            WBcel235
-species         Caenorhabditis_elegans
-fasta           /cluster/work/nme/genomes/Caenorhabditis_elegans/Ensembl/WBcel235/Sequence/WholeGenomeFasta/
-bismark         /cluster/work/nme/genomes/Caenorhabditis_elegans/Ensembl/WBcel235/Sequence/BismarkIndex/
-bowtie	        /cluster/work/nme/genomes/Caenorhabditis_elegans/Ensembl/WBcel235/Sequence/BowtieIndex/genome
-bowtie2	        /cluster/work/nme/genomes/Caenorhabditis_elegans/Ensembl/WBcel235/Sequence/Bowtie2Index/genome
-star            /cluster/work/nme/genomes/Caenorhabditis_elegans/Ensembl/WBcel235/Sequence/STARIndex
-bwa             /cluster/work/nme/genomes/Caenorhabditis_elegans/Ensembl/WBcel235/Sequence/BWAIndex/genome
-gtf	            /cluster/work/nme/genomes/Caenorhabditis_elegans/Ensembl/WBcel235/Annotation/Genes/genes.gtf

@@ -1,9 +1,0 @@
-name	        BDGP6
-species	        Drosophila_melanogaster
-fasta           /cluster/work/nme/genomes/Drosophila_melanogaster/Ensembl/BDGP6/Sequence/WholeGenomeFasta/
-bismark         /cluster/work/nme/genomes/Drosophila_melanogaster/Ensembl/BDGP6/Sequence/BismarkIndex/
-bowtie	        /cluster/work/nme/genomes/Drosophila_melanogaster/Ensembl/BDGP6/Sequence/BowtieIndex/genome
-bowtie2	        /cluster/work/nme/genomes/Drosophila_melanogaster/Ensembl/BDGP6/Sequence/Bowtie2Index/genome
-star            /cluster/work/nme/genomes/Drosophila_melanogaster/Ensembl/BDGP6/Sequence/STARIndex
-bwa             /cluster/work/nme/genomes/Drosophila_melanogaster/Ensembl/BDGP6/Sequence/BWAIndex/genome
-gtf	            /cluster/work/nme/genomes/Drosophila_melanogaster/Ensembl/BDGP6/Annotation/Genes/genes.gtf

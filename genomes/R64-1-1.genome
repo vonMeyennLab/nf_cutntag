@@ -1,9 +1,0 @@
-name	        R64-1-1
-species	        Saccharomyces_cerevisiae
-fasta           /cluster/work/nme/genomes/Saccharomyces_cerevisiae/Ensembl/R64-1-1/Sequence/WholeGenomeFasta/
-bismark         /cluster/work/nme/genomes/Saccharomyces_cerevisiae/Ensembl/R64-1-1/Sequence/BismarkIndex/
-bowtie	        /cluster/work/nme/genomes/Saccharomyces_cerevisiae/Ensembl/R64-1-1/Sequence/BowtieIndex/genome
-bowtie2	        /cluster/work/nme/genomes/Saccharomyces_cerevisiae/Ensembl/R64-1-1/Sequence/Bowtie2Index/genome
-star            /cluster/work/nme/genomes/Saccharomyces_cerevisiae/Ensembl/R64-1-1/Sequence/STARIndex
-bwa             /cluster/work/nme/genomes/Saccharomyces_cerevisiae/Ensembl/R64-1-1/Sequence/BWAIndex/genome
-gtf	            /cluster/work/nme/genomes/Saccharomyces_cerevisiae/Ensembl/R64-1-1/Annotation/Genes/genes.gtf

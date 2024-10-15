@@ -1,0 +1,4 @@
+name	        GRCh38.p14
+species	        Homo_sapiens
+fasta           /cluster/work/nme/genomes/refgenie/alias/Homo_sapiens_GRCh38_p14/fasta/ensembl_release_112/
+bowtie2	        /cluster/work/nme/genomes/refgenie/alias/Homo_sapiens_GRCh38_p14/bowtie2_index/ensembl_release_112/Homo_sapiens_GRCh38_p14

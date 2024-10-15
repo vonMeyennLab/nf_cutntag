@@ -1,5 +1,0 @@
-name	    Mitochondria
-species	    Homo_sapiens_GRCh38_chromosome_MT
-fasta	    /cluster/work/nme/genomes/Mitochondria
-bismark	    /cluster/work/nme/genomes/Mitochondria/BismarkIndex/
-bowtie2	    /cluster/work/nme/genomes/Mitochondria/mitochondria/Bowtie2Index/mitochondria

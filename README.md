@@ -52,30 +52,29 @@ Output directory where the files will be saved.
 
     Available genomes:
     ``` bash
-        GRCm39 # Default
-        GRCm38
-        GRCh38
-        GRCh37 
-        panTro6
-        CHIMP2.1.4
-        BDGP6
-        susScr11
-        Rnor_6.0
-        R64-1-1
-        TAIR10
-        WBcel235
-        E_coli_K_12_DH10B
-        E_coli_K_12_MG1655
-        Vectors
-        Lambda
-        PhiX
-        Mitochondria
+        Mus_musculus_GRCm39 # Default
+        Mus_musculus_GRCm38_p6
+        Homo_sapiens_GRCh38_p14
+        Rattus_norvegicus_mRatBN7_2
+        Bos_taurus_ARS-UCD1_2
+        Bos_taurus_ARS-UCD1_3
+        Caenorhabditis_elegans_WBcel235
+        Callithrix_jacchus_mCalJac1_pat_X
+        Capra_hircus_ARS1
+        Capreolus_capreolus_GCA_951849835_1
+        Escherichia_coli_ASM160652v1
+        Macaca_fascicularis_Macaca_fascicularis_6_0
+        Macaca_mulatta_Mmul_10
+        Monodelphis_domestica_ASM229v1
+        Pan_troglodytes_Pan_tro_3_0
+        Saccharomyces_cerevisiae_R64-1-1
+        Sus_scrofa_Sscrofa11_1
     ```
 
 - Option to use a custom genome for alignment by providing an absolute path to a custom genome file.
 
     ``` bash
-    --custom_genome_file '/cluster/work/nme/data/josousa/project/genome/CHM13.genome'
+    --custom_genome_file '/cluster/work/nme/data/josousa/project/genome/GRCm39.genome'
     ```
 
     Example of a genome file:

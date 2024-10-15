@@ -1,0 +1,4 @@
+name	        Sscrofa11.1
+species	        Sus_scrofa
+fasta           /cluster/work/nme/genomes/refgenie/alias/Sus_scrofa_Sscrofa11_1/fasta/ensembl_release_112/
+bowtie2	        /cluster/work/nme/genomes/refgenie/alias/Sus_scrofa_Sscrofa11_1/bowtie2_index/ensembl_release_112/Sus_scrofa_Sscrofa11_1

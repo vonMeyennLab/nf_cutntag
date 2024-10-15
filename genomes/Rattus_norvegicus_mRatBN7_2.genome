@@ -1,0 +1,4 @@
+name	        mRatBN7.2
+species	        Rattus_norvegicus
+fasta           /cluster/work/nme/genomes/refgenie/alias/Rattus_norvegicus_mRatBN7_2/fasta/ensembl_release_112/
+bowtie2	        /cluster/work/nme/genomes/refgenie/alias/Rattus_norvegicus_mRatBN7_2/bowtie2_index/ensembl_release_112/Rattus_norvegicus_mRatBN7_2

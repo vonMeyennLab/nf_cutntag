@@ -1,9 +1,0 @@
-name            CHIMP2.1.4
-species         Pan troglodytes
-fasta           /cluster/work/nme/genomes/Pan_troglodytes/Ensembl/CHIMP2.1.4/Sequence/WholeGenomeFasta/
-bismark         /cluster/work/nme/genomes/Pan_troglodytes/Ensembl/CHIMP2.1.4/Sequence/BismarkIndex/
-bowtie	        /cluster/work/nme/genomes/Pan_troglodytes/Ensembl/CHIMP2.1.4/Sequence/BowtieIndex/genome
-bowtie2	        /cluster/work/nme/genomes/Pan_troglodytes/Ensembl/CHIMP2.1.4/Sequence/Bowtie2Index/genome
-star            /cluster/work/nme/genomes/Pan_troglodytes/Ensembl/CHIMP2.1.4/Sequence/STARIndex
-bwa             /cluster/work/nme/genomes/Pan_troglodytes/Ensembl/CHIMP2.1.4/Sequence/BWAIndex/genome
-gtf	            /cluster/work/nme/genomes/Pan_troglodytes/Ensembl/CHIMP2.1.4/Annotation/Genes/genes.gtf

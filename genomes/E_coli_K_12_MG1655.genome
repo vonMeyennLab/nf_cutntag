@@ -1,9 +1,0 @@
-name            E_coli_K_12_MG1655
-species         Escherichia_coli_K_12_MG1655
-fasta           /cluster/work/nme/genomes/Escherichia_coli_K_12_MG1655/NCBI/2001-10-15/Sequence/WholeGenomeFasta/
-bismark         /cluster/work/nme/genomes/Escherichia_coli_K_12_MG1655/NCBI/2001-10-15/Sequence/BismarkIndex/
-bowtie	        /cluster/work/nme/genomes/Escherichia_coli_K_12_MG1655/NCBI/2001-10-15/Sequence/BowtieIndex/genome
-bowtie2	        /cluster/work/nme/genomes/Escherichia_coli_K_12_MG1655/NCBI/2001-10-15/Sequence/Bowtie2Index/genome
-star            /cluster/work/nme/genomes/Escherichia_coli_K_12_MG1655/NCBI/2001-10-15/Sequence/STARIndex
-bwa             /cluster/work/nme/genomes/Escherichia_coli_K_12_MG1655/NCBI/2001-10-15/Sequence/BWAIndex/genome
-gtf	            /cluster/work/nme/genomes/Escherichia_coli_K_12_MG1655/NCBI/2001-10-15/Annotation/Genes/genes.gtf

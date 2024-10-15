@@ -1,0 +1,4 @@
+name	        ARS-UCD1.2
+species	        Bos_taurus
+fasta           /cluster/work/nme/genomes/refgenie/alias/Bos_taurus_ARS-UCD1_2/fasta/ensembl_release_110/
+bowtie2	        /cluster/work/nme/genomes/refgenie/alias/Bos_taurus_ARS-UCD1_2/bowtie2_index/ensembl_release_110/Bos_taurus_ARS-UCD1_2

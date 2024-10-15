@@ -1,9 +1,0 @@
-name            E_coli_K_12_DH10B
-species         Escherichia_coli_K_12_DH10B
-fasta           /cluster/work/nme/genomes/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Sequence/WholeGenomeFasta/
-bismark         /cluster/work/nme/genomes/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Sequence/BismarkIndex/
-bowtie	        /cluster/work/nme/genomes/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Sequence/BowtieIndex/genome
-bowtie2	        /cluster/work/nme/genomes/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Sequence/Bowtie2Index/genome
-star            /cluster/work/nme/genomes/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Sequence/STARIndex
-bwa             /cluster/work/nme/genomes/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Sequence/BWAIndex/genome
-gtf	            /cluster/work/nme/genomes/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Annotation/Genes/genes.gtf

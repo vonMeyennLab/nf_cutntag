@@ -1,0 +1,4 @@
+name	        Macaca_fascicularis_6.0
+species	        Macaca_fascicularis
+fasta           /cluster/work/nme/genomes/refgenie/alias/Macaca_fascicularis_Macaca_fascicularis_6_0/fasta/ensembl_release_112/
+bowtie2	        /cluster/work/nme/genomes/refgenie/alias/Macaca_fascicularis_Macaca_fascicularis_6_0/bowtie2_index/ensembl_release_112/Macaca_fascicularis_Macaca_fascicularis_6_0

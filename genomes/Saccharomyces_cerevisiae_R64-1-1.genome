@@ -1,0 +1,4 @@
+name	        R64-1-1
+species	        Saccharomyces_cerevisiae
+fasta           /cluster/work/nme/genomes/refgenie/alias/Saccharomyces_cerevisiae_R64-1-1/fasta/ensembl_release_112/
+bowtie2	        /cluster/work/nme/genomes/refgenie/alias/Saccharomyces_cerevisiae_R64-1-1/bowtie2_index/ensembl_release_112/Saccharomyces_cerevisiae_R64-1-1

@@ -1,0 +1,4 @@
+name	        Pan_tro_3.0
+species	        Pan_troglodytes
+fasta           /cluster/work/nme/genomes/refgenie/alias/Pan_troglodytes_Pan_tro_3_0/fasta/ensembl_release_112/
+bowtie2	        /cluster/work/nme/genomes/refgenie/alias/Pan_troglodytes_Pan_tro_3_0/bowtie2_index/ensembl_release_112/Pan_troglodytes_Pan_tro_3_0

@@ -1,0 +1,4 @@
+name	        ASM160652v1
+species	        Escherichia_coli
+fasta           /cluster/work/nme/genomes/refgenie/alias/Escherichia_coli_ASM160652v1/fasta/ensembl_release_59/
+bowtie2	        /cluster/work/nme/genomes/refgenie/alias/Escherichia_coli_ASM160652v1/bowtie2_index/ensembl_release_59/Escherichia_coli_ASM160652v1
