@@ -1,7 +1,6 @@
 # CUT&Tag Sequencing Pipeline
 
 <img width="30%" src="https://raw.githubusercontent.com/nextflow-io/trademark/master/nextflow-logo-bg-light.png" />
-<img width="30%" src="https://tower.nf/assets/nf-tower-black.svg" />
 
 A Nextflow pipeline to perform quality control, alignment, and feature coverage of CUT&Tag sequencing data.
 
