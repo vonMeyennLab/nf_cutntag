@@ -23,6 +23,7 @@ process MULTIQC {
 
 	script:
 		"""
+		export TMPDIR=${task.workDir}
 		multiqc ${multiqc_args} --filename multiqc_report.html .
 		"""
 }
