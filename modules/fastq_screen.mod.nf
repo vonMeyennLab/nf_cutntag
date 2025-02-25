@@ -24,8 +24,8 @@ process FASTQ_SCREEN {
 		val(fastq_screen_args)
 
 	output:
-	  	path "*html", emit: html
-	  	path "*txt",  emit: report
+		path "*html", emit: html
+		path "*txt",  emit: report
 		
 		publishDir "$outputdir/qc/fastq_screen", mode: "link", overwrite: true
 

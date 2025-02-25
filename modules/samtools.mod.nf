@@ -37,7 +37,7 @@ process SAMTOOLS_SORT {
 
 		"""
 		samtools sort --threads ${task.cpus-1} ${samtools_sort_args} ${bam} -o ${basename}.sorted.bam
-    	"""
+		"""
 }
 
 // SAMTOOLS_INDEX

@@ -21,7 +21,7 @@ process MARK_DUPLICATES {
 		path "*bam", emit: bam
 		path "*txt", emit: metrics
 
-	 	publishDir "$outputdir/aligned/bam",              mode: "link", overwrite: true, pattern: "*dupflag.bam"
+		publishDir "$outputdir/aligned/bam",              mode: "link", overwrite: true, pattern: "*dupflag.bam"
 		publishDir "$outputdir/aligned/bam/deduplicated", mode: "link", overwrite: true, pattern: "*dedup.bam", enabled: params.bam_output
 		publishDir "$outputdir/aligned/logs",             mode: "link", overwrite: true, pattern: "*txt"
 

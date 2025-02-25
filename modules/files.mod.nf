@@ -22,7 +22,7 @@ def getFileBaseNames(fileList) {
     bareFiles = []
 
     for (String s : fileList) {
-       
+
         if (params.single_end){
             matcher = s =~ /^(.*).(fastq|fq).gz$/
 

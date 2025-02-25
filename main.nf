@@ -84,7 +84,7 @@ if (params.bowtie2_no_unal){
 // --REMOVE_DUPLICATES
 params.picard_markduplicates_remove_duplicates = false
 if (params.picard_markduplicates_remove_duplicates){
-	    mark_duplicates_args += " REMOVE_DUPLICATES=true "
+        mark_duplicates_args += " REMOVE_DUPLICATES=true "
     }
 // If true do not write duplicates to the output file instead of writing them with
 // appropriate flags set.
@@ -93,7 +93,7 @@ if (params.picard_markduplicates_remove_duplicates){
 // --REMOVE_SEQUENCING_DUPLICATES
 params.picard_markduplicates_remove_sequencing_duplicates = false
 if (params.picard_markduplicates_remove_sequencing_duplicates){
-	    mark_duplicates_args += " REMOVE_SEQUENCING_DUPLICATES=true "
+        mark_duplicates_args += " REMOVE_SEQUENCING_DUPLICATES=true "
     }
 // If true remove 'optical' duplicates and other duplicates that appear to have arisen from
 // the sequencing process instead of the library preparation process, even if
@@ -192,9 +192,9 @@ workflow {
         if (!params.skip_qc){
 
             multiqc_ch = FASTQC.out.report.mix(
-                         TRIM_GALORE.out.report.ifEmpty([]),
-                         FASTQC2.out.report.ifEmpty([])
-                         ).collect()
+                            TRIM_GALORE.out.report.ifEmpty([]),
+                            FASTQC2.out.report.ifEmpty([])
+                            ).collect()
 
             if (!params.skip_fastq_screen){
                 multiqc_ch = multiqc_ch.mix(
