@@ -19,7 +19,7 @@ process BEDTOOLS_GENOMECOV {
 
     output:
         path "*bedgraph", emit: bedgraph
-        publishDir "$outputdir/aligned/bedgraph", mode: "link", overwrite: true
+        publishDir "$outputdir/aligned/bedgraph/raw/", mode: "link", overwrite: true
 
     script:
         """
