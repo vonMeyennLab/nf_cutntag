@@ -53,11 +53,11 @@ process BEDTOOLS_GENOMECOV_NORM {
         """
 
 		# get number of mapped reads from Picard MarkDupl metrics file
-		mapped=$(grep -A2 " METRICS CLASS" ${metrics} | grep -v "#" | cut -f 3 | grep -v READ_PAIRS_EXAMINED)
-		echo ${mapped}
+		mapped=\$(grep -A2 " METRICS CLASS" ${metrics} | grep -v "#" | cut -f 3 | grep -v READ_PAIRS_EXAMINED)
+		echo \${mapped}
 
 		# convert bam to bedgraph
-        bedtools genomecov -scale ${mapped} ${bedtools_genomecov_args} -ibam ${bam} > ${bam}.normalized.bedgraph
+        bedtools genomecov -scale \${mapped} ${bedtools_genomecov_args} -ibam ${bam} > ${bam}.normalized.bedgraph
         
         for file in *.bam.normalized.bedgraph; do
             mv "\$file" "\${file/.bam.normalized.bedgraph/.normalized.bedgraph}"
