@@ -150,16 +150,17 @@ file_ch = makeFilesChannel(input_files)
 /* ========================================================================================
     WORKFLOW
 ======================================================================================== */
-include { FASTQC }             from './modules/fastqc.mod.nf'
-include { FASTQC as FASTQC2 }  from './modules/fastqc.mod.nf'
-include { FASTQ_SCREEN }       from './modules/fastq_screen.mod.nf'
-include { TRIM_GALORE }        from './modules/trim_galore.mod.nf'
-include { BOWTIE2 }            from './modules/bowtie2.mod.nf'  params(bam_output: false, genome: genome)
-include { SAMTOOLS_SORT }      from './modules/samtools.mod.nf' params(bam_output: params.bam_output)
-include { SAMTOOLS_INDEX }     from './modules/samtools.mod.nf' params(bam_output: params.bam_output)
-include { MARK_DUPLICATES }    from './modules/picard.mod.nf'   params(bam_output: params.bam_output)
-include { BEDTOOLS_GENOMECOV } from './modules/bedtools.mod.nf'
-include { MULTIQC }            from './modules/multiqc.mod.nf'
+include { FASTQC }                  from './modules/fastqc.mod.nf'
+include { FASTQC as FASTQC2 }       from './modules/fastqc.mod.nf'
+include { FASTQ_SCREEN }            from './modules/fastq_screen.mod.nf'
+include { TRIM_GALORE }             from './modules/trim_galore.mod.nf'
+include { BOWTIE2 }                 from './modules/bowtie2.mod.nf'  params(bam_output: false, genome: genome)
+include { SAMTOOLS_SORT }           from './modules/samtools.mod.nf' params(bam_output: params.bam_output)
+include { SAMTOOLS_INDEX }          from './modules/samtools.mod.nf' params(bam_output: params.bam_output)
+include { MARK_DUPLICATES }         from './modules/picard.mod.nf'   params(bam_output: params.bam_output)
+include { BEDTOOLS_GENOMECOV_norm } from './modules/bedtools.mod.nf'
+include { BEDTOOLS_GENOMECOV }      from './modules/bedtools.mod.nf'
+include { MULTIQC }                 from './modules/multiqc.mod.nf'
 
 workflow {
 
@@ -179,10 +180,13 @@ workflow {
         } else {
             BOWTIE2                         (file_ch, outdir, bowtie2_args)
         }
-        SAMTOOLS_SORT        (BOWTIE2.out.bam, outdir,samtools_sort_args)
-        MARK_DUPLICATES      (SAMTOOLS_SORT.out.bam, outdir, mark_duplicates_args)
-        SAMTOOLS_INDEX       (MARK_DUPLICATES.out.bam, outdir, samtools_index_args)
-        BEDTOOLS_GENOMECOV   (MARK_DUPLICATES.out.bam, outdir, bedtools_genomecov_args)
+        SAMTOOLS_SORT             (BOWTIE2.out.bam, outdir,samtools_sort_args)
+        MARK_DUPLICATES           (SAMTOOLS_SORT.out.bam, outdir, mark_duplicates_args)
+        SAMTOOLS_INDEX            (MARK_DUPLICATES.out.bam, outdir, samtools_index_args)
+        BEDTOOLS_GENOMECOV        (MARK_DUPLICATES.out.bam, outdir, bedtools_genomecov_args)
+        BEDTOOLS_GENOMECOV_norm   (MARK_DUPLICATES.out.bam, outdir, bedtools_genomecov_args)
+
+
 
         /* ========================================================================================
             Reports
