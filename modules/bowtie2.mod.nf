@@ -54,6 +54,6 @@ process BOWTIE2 {
 		bowtie_name = name + "_" + params.genome["name"]
 
 		"""
-		bowtie2 -x ${index} -p ${task.cpus} ${bowtie2_args} ${readString} 2>${bowtie_name}_bt2_stats.txt | samtools view -bS -F 4 -F 8 -F 256 -> ${bowtie_name}_bt2.bam
+		bowtie2 -x ${index} -p ${task.cpus} ${bowtie2_args} ${readString} 2>${bowtie_name}_bt2_stats.txt | samtools view -@ ${task.cpus} -bS -F 4 -F 8 -F 256 -> ${bowtie_name}_bt2.bam
 		"""
 }
