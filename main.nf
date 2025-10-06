@@ -184,7 +184,7 @@ workflow {
         MARK_DUPLICATES           (SAMTOOLS_SORT.out.bam, outdir, mark_duplicates_args)
         SAMTOOLS_INDEX            (MARK_DUPLICATES.out.bam, outdir, samtools_index_args)
         BEDTOOLS_GENOMECOV        (MARK_DUPLICATES.out.bam, outdir, bedtools_genomecov_args)
-        BEDTOOLS_GENOMECOV_NORM   (MARK_DUPLICATES.out.bam, outdir, bedtools_genomecov_args)
+        BEDTOOLS_GENOMECOV_NORM   (MARK_DUPLICATES.out.bam, MARK_DUPLICATES.out.metrics, outdir, bedtools_genomecov_args)
 
 
 
