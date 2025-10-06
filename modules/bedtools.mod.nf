@@ -32,7 +32,7 @@ process BEDTOOLS_GENOMECOV {
 }
 
 
-process BEDTOOLS_GENOMECOV_norm {
+process BEDTOOLS_GENOMECOV_NORM {
 
     label 'bedtools'
     tag "$bam" // Adds name to job submission
