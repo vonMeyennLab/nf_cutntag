@@ -50,8 +50,7 @@ process BEDTOOLS_GENOMECOV_norm {
 
     script:
         """
-		scale_factor=2
-        bedtools genomecov -scale $scale_factor ${bedtools_genomecov_args} -ibam ${bam} > ${bam}.normalized.bedgraph
+        bedtools genomecov -scale 2 ${bedtools_genomecov_args} -ibam ${bam} > ${bam}.normalized.bedgraph
         
         for file in *.bam.normalized.bedgraph; do
             mv "\$file" "\${file/.bam.normalized.bedgraph/.normalized.bedgraph}"
