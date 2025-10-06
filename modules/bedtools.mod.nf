@@ -54,6 +54,9 @@ process BEDTOOLS_GENOMECOV_NORM {
 
 		# get number of mapped reads from Picard MarkDupl metrics file
 		mapped=\$(grep -A2 " METRICS CLASS" ${metrics} | grep -v "#" | cut -f 3 | grep -v READ_PAIRS_EXAMINED)
+		# get norm factor, by dividing the number of mapped reads by 1M
+		mapped=\$(awk -v var=\$mapped 'BEGIN { printf "%.2f", var/1000000 }')
+		echo "heyyyyyyyyyy"
 		echo \${mapped}
 
 		# convert bam to bedgraph
