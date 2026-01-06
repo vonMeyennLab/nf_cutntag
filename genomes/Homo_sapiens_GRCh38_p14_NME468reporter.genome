@@ -1,0 +1,4 @@
+name	        Homo_sapiens_GRCh38_p14_NME468reporter
+species	        Homo_sapiens
+fasta           /cluster/work/nme/genomes/refgenie/alias/Homo_sapiens_GRCh38_p14_NME468reporter/fasta/custom_ensembl_release_112/
+bowtie2	        /cluster/work/nme/genomes/refgenie/alias/Homo_sapiens_GRCh38_p14_NME468reporter/bowtie2_index/custom_ensembl_release_112/Homo_sapiens_GRCh38_p14
