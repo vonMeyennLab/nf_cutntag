@@ -197,7 +197,7 @@ workflow {
         } else {
             SAMTOOLS_INDEX            (SAMTOOLS_SORT.out.bam, outdir, samtools_index_args)
             BEDTOOLS_GENOMECOV        (SAMTOOLS_SORT.out.bam, outdir, bedtools_genomecov_args)
-            //BEDTOOLS_GENOMECOV_NORM  (SAMTOOLS_SORT.out.bam, MARK_DUPLICATES.out.metrics, outdir, bedtools_genomecov_args)
+            BEDTOOLS_GENOMECOV_NORM   (SAMTOOLS_SORT.out.bam, BOWTIE2.out.stats, outdir, bedtools_genomecov_args)
         }
 
 
