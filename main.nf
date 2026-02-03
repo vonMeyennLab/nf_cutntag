@@ -106,10 +106,14 @@ if (params.picard_markduplicates_remove_sequencing_duplicates){
 
 // With deduplication,    outputs:     *.sorted.bam and *.sorted.dedup.bam
 // Without deduplication, outputs:     *.sorted.dupflag.bam
-if ((params.mark_duplicates_args =~ /.*REMOVE_DUPLICATES=true.*/) || (params.mark_duplicates_args =~ /.*REMOVE_SEQUENCING_DUPLICATES=true.*/)){
-        params.bam_output = true
+if (params.skip_markdupl) {
+    if ((params.mark_duplicates_args =~ /.*REMOVE_DUPLICATES=true.*/) || (params.mark_duplicates_args =~ /.*REMOVE_SEQUENCING_DUPLICATES=true.*/)){
+            params.bam_output = true
+        } else {
+            params.bam_output = false
+        }
     } else {
-        params.bam_output = false
+        params.bam_output = true
     }
 // ---------------------------------------- //
 
