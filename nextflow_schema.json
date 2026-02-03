@@ -164,7 +164,7 @@
                     "type": "boolean",
                     "fa_icon": "fas fa-fast-forward",
                     "description": "Skip Picard markdupl (e.g., DamID, CAtaDA).",
-                    "default": true
+                    "default": false
                 }
 
             }
