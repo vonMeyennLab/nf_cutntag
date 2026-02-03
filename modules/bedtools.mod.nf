@@ -52,8 +52,10 @@ process BEDTOOLS_GENOMECOV_NORM {
     script:
         """
 
-		# get number of mapped reads from Picard MarkDupl metrics file
-		mapped=\$(grep -A2 " METRICS CLASS" ${metrics} | grep -v "#" | cut -f 3 | grep -v READ_PAIRS_EXAMINED)
+		# get number of mapped reads from bowtie metrics file
+		unique=\$(cat ${metrics} | grep 'aligned concordantly' | grep -v "0 times" | awk '{ print \$1 }' | head -1)
+		multim=\$(cat ${metrics} | grep 'aligned concordantly' | grep -v "0 times" | awk '{ print \$1 }' | tail -1)
+		mapped=\$((unique+multim))
 		# get norm factor, by dividing the number of mapped reads by 1M
 		mapped=\$(awk -v var=\$mapped 'BEGIN { printf "%.2f", var/1000000 }')
 
