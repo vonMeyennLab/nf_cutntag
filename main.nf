@@ -29,6 +29,7 @@ if(params.outdir){
     SKIP STEPS
 ======================================================================================== */
 params.skip_qc             = false
+params.skip_markdupl       = false
 params.skip_fastq_screen   = true
 
 
@@ -181,10 +182,19 @@ workflow {
             BOWTIE2                         (file_ch, outdir, bowtie2_args)
         }
         SAMTOOLS_SORT             (BOWTIE2.out.bam, outdir,samtools_sort_args)
-        MARK_DUPLICATES           (SAMTOOLS_SORT.out.bam, outdir, mark_duplicates_args)
-        SAMTOOLS_INDEX            (MARK_DUPLICATES.out.bam, outdir, samtools_index_args)
-        BEDTOOLS_GENOMECOV        (MARK_DUPLICATES.out.bam, outdir, bedtools_genomecov_args)
-        BEDTOOLS_GENOMECOV_NORM   (MARK_DUPLICATES.out.bam, MARK_DUPLICATES.out.metrics, outdir, bedtools_genomecov_args)
+
+
+        # Run Picard MarkDupl or not? Usually yes, but in some cases (DamID, CAtaDA), we don't need that
+        if (!params.skip_markdupl){
+            MARK_DUPLICATES           (SAMTOOLS_SORT.out.bam, outdir, mark_duplicates_args)
+            SAMTOOLS_INDEX            (MARK_DUPLICATES.out.bam, outdir, samtools_index_args)
+            BEDTOOLS_GENOMECOV        (MARK_DUPLICATES.out.bam, outdir, bedtools_genomecov_args)
+            BEDTOOLS_GENOMECOV_NORM   (MARK_DUPLICATES.out.bam, MARK_DUPLICATES.out.metrics, outdir, bedtools_genomecov_args)
+        } else {
+            SAMTOOLS_INDEX            (SAMTOOLS_SORT.out.bam, outdir, samtools_index_args)
+            BEDTOOLS_GENOMECOV        (SAMTOOLS_SORT.out.bam, outdir, bedtools_genomecov_args)
+            #BEDTOOLS_GENOMECOV_NORM  (SAMTOOLS_SORT.out.bam, MARK_DUPLICATES.out.metrics, outdir, bedtools_genomecov_args)
+        }
 
 
 
@@ -216,10 +226,15 @@ workflow {
 
         }
 
-        multiqc_ch = multiqc_ch.mix(
-            MARK_DUPLICATES.out.metrics.ifEmpty([])
-            ).collect()
 
+        
+        if (!params.skip_markdupl){
+
+            multiqc_ch = multiqc_ch.mix(
+                MARK_DUPLICATES.out.metrics.ifEmpty([])
+                ).collect()
+
+        }
 
         MULTIQC (multiqc_ch, outdir, multiqc_args)
 }
