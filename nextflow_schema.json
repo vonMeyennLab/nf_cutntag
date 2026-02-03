@@ -158,6 +158,13 @@
                     "fa_icon": "fas fa-fast-forward",
                     "description": "Skip FastQ Screen.",
                     "default": true
+                },
+
+                "skip_markdupl": {
+                    "type": "boolean",
+                    "fa_icon": "fas fa-fast-forward",
+                    "description": "Skip Picard markdupl (e.g., DamID, CAtaDA).",
+                    "default": true
                 }
 
             }
