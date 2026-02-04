@@ -40,7 +40,8 @@ process BEDTOOLS_GENOMECOV_NORM {
     container 'docker://staphb/bedtools:2.31.1'
 
     input:
-        path(bam), path(stats)
+        path(bam)
+        path(stats)
         val(outputdir)
         val(bedtools_genomecov_args)
 
