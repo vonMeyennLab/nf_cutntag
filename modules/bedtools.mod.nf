@@ -52,9 +52,9 @@ process BEDTOOLS_GENOMECOV_NORM {
     script:
         """
 
-		# get number of mapped reads from bowtie metrics file
-		unique=\$(cat ${metrics} | grep 'aligned concordantly' | grep -v "0 times" | awk '{ print \$1 }' | head -1)
-		multim=\$(cat ${metrics} | grep 'aligned concordantly' | grep -v "0 times" | awk '{ print \$1 }' | tail -1)
+		# get number of mapped reads from bowtie stats file
+		unique=\$(cat ${stats} | grep 'aligned concordantly' | grep -v "0 times" | awk '{ print \$1 }' | head -1)
+		multim=\$(cat ${stats} | grep 'aligned concordantly' | grep -v "0 times" | awk '{ print \$1 }' | tail -1)
 		mapped=\$((unique+multim))
 		# get norm factor, by dividing the number of mapped reads by 1M
 		normfactor=\$(awk -v var=\$mapped 'BEGIN { printf "%.5f", var/1000000 }')
