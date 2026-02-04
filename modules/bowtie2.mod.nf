@@ -24,10 +24,8 @@ process BOWTIE2 {
 		val(bowtie2_args)
 
 	output:
-		tuple val(name), path("*bam"),       emit: bam
-		tuple val(name), path("*stats.txt"), emit: stats
-		//path "*bam",  	   emit: bam
-		//path "*stats.txt", emit: stats
+		path "*bam",  	   emit: bam
+		path "*stats.txt", emit: stats
 
 		publishDir "$outputdir/aligned/bam",  mode: "link", overwrite: true, pattern: "*bam", enabled: params.bam_output
 		publishDir "$outputdir/aligned/logs", mode: "link", overwrite: true, pattern: "*stats.txt"
