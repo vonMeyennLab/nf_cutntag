@@ -14,8 +14,8 @@ process BEDTOOLS_GENOMECOV {
 
     input:
         path(bam)
-        val outputdir
-        val bedtools_genomecov_args
+        val(outputdir)
+        val(bedtools_genomecov_args)
 
     output:
         path "*bedgraph", emit: bedgraph
@@ -41,8 +41,8 @@ process BEDTOOLS_GENOMECOV_NORM {
 
     input:
         path(bam), path(stats)
-        val outputdir
-        val bedtools_genomecov_args
+        val(outputdir)
+        val(bedtools_genomecov_args)
 
     output:
         path "*bedgraph", emit: bedgraph
