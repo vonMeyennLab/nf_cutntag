@@ -13,9 +13,9 @@ process BEDTOOLS_GENOMECOV {
     container 'docker://staphb/bedtools:2.31.1'
 
     input:
-        path(bam)
-        val(outputdir)
-        val(bedtools_genomecov_args)
+        path bam
+        val outputdir
+        val bedtools_genomecov_args
 
     output:
         path "*bedgraph", emit: bedgraph
@@ -40,10 +40,10 @@ process BEDTOOLS_GENOMECOV_NORM {
     container 'docker://staphb/bedtools:2.31.1'
 
     input:
-        path(bam)
-        path(stats)
-        val(outputdir)
-        val(bedtools_genomecov_args)
+        path bam
+        path stats
+        val outputdir
+        val bedtools_genomecov_args
 
     output:
         path "*bedgraph", emit: bedgraph
