@@ -41,7 +41,7 @@ process BEDTOOLS_GENOMECOV_NORM {
 
     input:
         path bam
-		path metrics
+		path stats
         val outputdir
         val bedtools_genomecov_args
 
