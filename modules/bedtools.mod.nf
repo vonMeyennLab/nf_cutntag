@@ -19,7 +19,6 @@ process BEDTOOLS_GENOMECOV {
 
     output:
         path "*bedgraph", emit: bedgraph
-        path "norm_factor.tmp"
         publishDir "$outputdir/aligned/bedgraph/raw/", mode: "link", overwrite: true
 
     script:
@@ -48,6 +47,7 @@ process BEDTOOLS_GENOMECOV_NORM {
 
     output:
         path "*bedgraph", emit: bedgraph
+        path "norm_factor.tmp"
         publishDir "$outputdir/aligned/bedgraph/normalized/", mode: "link", overwrite: true
 
     script:
