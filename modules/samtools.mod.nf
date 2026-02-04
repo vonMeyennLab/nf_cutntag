@@ -21,12 +21,14 @@ process SAMTOOLS_SORT {
 	container 'docker://staphb/samtools:1.20'
 
 	input:
-		path(bam)
+		//path(bam)
+		tuple val(name), path(bam)
 		val(outputdir)
 		val(samtools_sort_args)
 
 	output:
-		path "*bam", emit: bam
+		//path "*bam", emit: bam
+		tuple val(name), path("*bam"), emit: bam
 		publishDir "$outputdir/aligned/bam", mode: "link", overwrite: true, enabled: params.bam_output
 
     script:
@@ -49,12 +51,14 @@ process SAMTOOLS_INDEX {
 	container 'docker://staphb/samtools:1.20'
 
 	input:
-		path(bam)
+		//path(bam)
+		tuple val(name), path(bam)
 		val(outputdir)
 		val(samtools_index_args)
 
 	output:
-		path "*.bai", emit: bai
+		tuple val(name), path(bam), path("*.bai"), emit: bai
+		//path "*.bai", emit: bai
 		publishDir "$outputdir/aligned/bam", mode: "link", overwrite: true
 
     script:
