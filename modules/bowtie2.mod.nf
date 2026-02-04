@@ -24,7 +24,8 @@ process BOWTIE2 {
 		val(bowtie2_args)
 
 	output:
-		tuple val name, path "*bam", path "*stats.txt"
+		tuple val(name), path("*bam"),       emit: bam
+		tuple val(name), path("*stats.txt"), emit: stats
 		//path "*bam",  	   emit: bam
 		//path "*stats.txt", emit: stats
 
