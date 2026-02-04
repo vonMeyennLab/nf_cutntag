@@ -13,14 +13,13 @@ process MARK_DUPLICATES {
 	container 'docker://agrf/picard:2.18.27'
 
 	input:
-		tuple val(name), path(bam)
-		//path(bam)
+		path(bam)
 		val(outputdir)
 		val(mark_duplicates_args)
 
 	output:
-		tuple val(name), path("*bam"), emit: bam
-		tuple val(name), path("*txt"), emit: metrics
+		path("*bam"), emit: bam
+		path("*txt"), emit: metrics
 
 		publishDir "$outputdir/aligned/bam",              mode: "link", overwrite: true, pattern: "*dupflag.bam"
 		publishDir "$outputdir/aligned/bam/deduplicated", mode: "link", overwrite: true, pattern: "*dedup.bam", enabled: params.bam_output
