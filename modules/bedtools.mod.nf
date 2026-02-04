@@ -47,7 +47,7 @@ process BEDTOOLS_GENOMECOV_NORM {
 
     output:
         path "*bedgraph", emit: bedgraph
-        path "norm_factor.tmp"
+        path "*norm_factor.tmp"
         publishDir "$outputdir/aligned/bedgraph/normalized/", mode: "link", overwrite: true
 
     script:
@@ -59,7 +59,7 @@ process BEDTOOLS_GENOMECOV_NORM {
 		mapped=\$((unique+multim))
 		# get norm factor, by dividing the number of mapped reads by 1M
 		normfactor=\$(awk -v var=\$mapped 'BEGIN { printf "%.5f", var/1000000 }')
-		echo \${normfactor} > norm_factor.tmp
+		echo -e "\${mapped}\t\${normfactor}" > ${bam}.norm_factor.tmp
 
 		# convert bam to bedgraph
         bedtools genomecov -scale \${normfactor} ${bedtools_genomecov_args} -ibam ${bam} > ${bam}.normalized.bedgraph
