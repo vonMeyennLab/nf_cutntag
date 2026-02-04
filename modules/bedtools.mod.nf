@@ -57,10 +57,10 @@ process BEDTOOLS_GENOMECOV_NORM {
 		multim=\$(cat ${metrics} | grep 'aligned concordantly' | grep -v "0 times" | awk '{ print \$1 }' | tail -1)
 		mapped=\$((unique+multim))
 		# get norm factor, by dividing the number of mapped reads by 1M
-		mapped=\$(awk -v var=\$mapped 'BEGIN { printf "%.2f", var/1000000 }')
+		mapped=\$(awk -v var=\$mapped 'BEGIN { printf "%.5f", var/1000000 }')
 
 		# convert bam to bedgraph
-        bedtools genomecov -scale \${mapped} ${bedtools_genomecov_args} -ibam ${bam} > ${bam}.normalized.bedgraph
+        bedtools genomecov -scale ${mapped} ${bedtools_genomecov_args} -ibam ${bam} > ${bam}.normalized.bedgraph
         
         for file in *.bam.normalized.bedgraph; do
             mv "\$file" "\${file/.bam.normalized.bedgraph/.normalized.bedgraph}"
