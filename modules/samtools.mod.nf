@@ -49,14 +49,12 @@ process SAMTOOLS_INDEX {
 	container 'docker://staphb/samtools:1.20'
 
 	input:
-		//path(bam)
-		tuple val(name), path(bam)
+		path(bam)
 		val(outputdir)
 		val(samtools_index_args)
 
 	output:
-		tuple val(name), path(bam), path("*.bai"), emit: bai
-		//path "*.bai", emit: bai
+		path "*.bai", emit: bai
 		publishDir "$outputdir/aligned/bam", mode: "link", overwrite: true
 
     script:
