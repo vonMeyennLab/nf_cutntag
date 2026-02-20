@@ -20,7 +20,7 @@ process NORMALISE_BG {
 
     script:
         """
-        awk 'FNR==NR{sum+=$4; next} {printf "%s\t%d\t%d\t%.6f\n",$1,$2,$3, ($4/sum)*1e6}' ${bg} ${bg} > ${bg}.normalized.bedgraph
+        awk 'FNR==NR{sum+=\$4; next} {printf "%s\t%d\t%d\t%.6f\n",\$1,\$2,\$3, (\$4/sum)*1e6}' ${bg} ${bg} > ${bg}.normalized.bedgraph
                 
         for file in *.bedgraph.normalized.bedgraph; do
             mv "\$file" "\${file/.bedgraph.normalized.bedgraph/.normalized.bedgraph}"
