@@ -163,8 +163,8 @@ include { BOWTIE2 }                 from './modules/bowtie2.mod.nf'  params(bam_
 include { SAMTOOLS_SORT }           from './modules/samtools.mod.nf' params(bam_output: params.bam_output)
 include { SAMTOOLS_INDEX }          from './modules/samtools.mod.nf' params(bam_output: params.bam_output)
 include { MARK_DUPLICATES }         from './modules/picard.mod.nf'   params(bam_output: params.bam_output)
-include { BEDTOOLS_GENOMECOV_NORM } from './modules/bedtools.mod.nf'
 include { BEDTOOLS_GENOMECOV }      from './modules/bedtools.mod.nf'
+include { NORMALISE_BG }            from './modules/bedgraphNorm.mod.nf'
 include { MULTIQC }                 from './modules/multiqc.mod.nf'
 
 workflow {
@@ -193,7 +193,7 @@ workflow {
             MARK_DUPLICATES           (SAMTOOLS_SORT.out.bam, outdir, mark_duplicates_args)
             SAMTOOLS_INDEX            (MARK_DUPLICATES.out.bam, outdir, samtools_index_args)
             BEDTOOLS_GENOMECOV        (MARK_DUPLICATES.out.bam, outdir, bedtools_genomecov_args)
-            //BEDTOOLS_GENOMECOV_NORM   (MARK_DUPLICATES.out.bam, BOWTIE2.out.stats, outdir, bedtools_genomecov_args) this needs a fix
+            NORMALISE_BG              ()
         } else {
             SAMTOOLS_INDEX            (SAMTOOLS_SORT.out.bam, outdir, samtools_index_args)
             BEDTOOLS_GENOMECOV        (SAMTOOLS_SORT.out.bam, outdir, bedtools_genomecov_args)
