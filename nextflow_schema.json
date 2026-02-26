@@ -53,7 +53,7 @@
                     "default": "Mus_musculus_GRCm39",
                     "description": "Name of the reference genome.",
                     "fa_icon": "fas fa-book",
-                    "enum": ["Mus_musculus_GRCm39", "Mus_musculus_GRCm38_p6", "Homo_sapiens_GRCh38_p14", "NME468reporter", "Rattus_norvegicus_mRatBN7_2", "Bos_taurus_ARS-UCD1_2", "Bos_taurus_ARS-UCD1_3", "Caenorhabditis_elegans_WBcel235", "Callithrix_jacchus_mCalJac1_pat_X", "Capra_hircus_ARS1", "Capreolus_capreolus_GCA_951849835_1", "Escherichia_coli_ASM160652v1", "Macaca_fascicularis_Macaca_fascicularis_6_0", "Macaca_mulatta_Mmul_10", "Monodelphis_domestica_ASM229v1", "Pan_troglodytes_Pan_tro_3_0", "Saccharomyces_cerevisiae_R64-1-1", "Sus_scrofa_Sscrofa11_1"]
+                    "enum": ["Mus_musculus_GRCm39", "Mus_musculus_GRCm38_p6", "Homo_sapiens_GRCh38_p14", "NME468reporter","NME468_NME501reporter","NME469_NME501reporter", "Rattus_norvegicus_mRatBN7_2", "Bos_taurus_ARS-UCD1_2", "Bos_taurus_ARS-UCD1_3", "Caenorhabditis_elegans_WBcel235", "Callithrix_jacchus_mCalJac1_pat_X", "Capra_hircus_ARS1", "Capreolus_capreolus_GCA_951849835_1", "Escherichia_coli_ASM160652v1", "Macaca_fascicularis_Macaca_fascicularis_6_0", "Macaca_mulatta_Mmul_10", "Monodelphis_domestica_ASM229v1", "Pan_troglodytes_Pan_tro_3_0", "Saccharomyces_cerevisiae_R64-1-1", "Sus_scrofa_Sscrofa11_1"]
                 },
 
                 "custom_genome_file": {
