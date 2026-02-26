@@ -1,0 +1,4 @@
+name	NME469_NME501reporter
+species	Homo_sapiens
+fasta	/cluster/work/nme/genomes/refgenie/alias//NME469_NME501reporter/fasta/custom_ensembl_release_112/
+bowtie2	/cluster/work/nme/genomes/refgenie/alias//NME469_NME501reporter/bowtie2_index/custom_ensembl_release_112/NME469_NME501reporter
