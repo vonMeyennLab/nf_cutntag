@@ -96,7 +96,7 @@
                     "default": true
                 },
                 
-                "bowtie2_map_unique": {
+                "unique_map": {
                     "type": "boolean",
                     "fa_icon": "fas fa-file-code",
                     "description": "Only report uniquely mapped reads (MAPQ>30)",
