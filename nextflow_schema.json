@@ -95,6 +95,13 @@
                     "description": "Suppress SAM records for unaligned reads.",
                     "default": true
                 }
+                
+                "bowtie2_map_unique": {
+                    "type": "boolean",
+                    "fa_icon": "fas fa-file-code",
+                    "description": "Only reports uniquely mapped reads (MAPQ>30)",
+                    "default": false
+                }
 
             }
         },
