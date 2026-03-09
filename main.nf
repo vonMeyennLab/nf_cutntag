@@ -161,6 +161,7 @@ include { FASTQC as FASTQC2 }       from './modules/fastqc.mod.nf'
 include { FASTQ_SCREEN }            from './modules/fastq_screen.mod.nf'
 include { TRIM_GALORE }             from './modules/trim_galore.mod.nf'
 include { BOWTIE2 }                 from './modules/bowtie2.mod.nf'  params(bam_output: false, genome: genome)
+include { BOWTIE2_Q30 }             from './modules/bowtie2.mod.nf'  params(bam_output: false, genome: genome)
 include { SAMTOOLS_SORT }           from './modules/samtools.mod.nf' params(bam_output: params.bam_output)
 include { SAMTOOLS_INDEX }          from './modules/samtools.mod.nf' params(bam_output: params.bam_output)
 include { MARK_DUPLICATES }         from './modules/picard.mod.nf'   params(bam_output: params.bam_output)
@@ -182,16 +183,24 @@ workflow {
 
             TRIM_GALORE                     (file_ch, outdir, trim_galore_args)
             FASTQC2                         (TRIM_GALORE.out.reads, outdir, fastqc_args)
-            BOWTIE2                         (TRIM_GALORE.out.reads, outdir, bowtie2_args)
+            if (params.unique_map){
+                BOWTIE2_Q30                 (TRIM_GALORE.out.reads, outdir, bowtie2_args)
+            } else {
+                BOWTIE2                     (TRIM_GALORE.out.reads, outdir, bowtie2_args)
+			}
         } else {
             if (params.unique_map){
-                BOWTIE2                     (file_ch, outdir, bowtie2_args)
+                BOWTIE2_Q30                 (file_ch, outdir, bowtie2_args)
             } else {
                 BOWTIE2                     (file_ch, outdir, bowtie2_args)
 			}
         }
-        SAMTOOLS_SORT                       (BOWTIE2.out.bam, outdir,samtools_sort_args)
 
+        if (params.unique_map){
+            SAMTOOLS_SORT                       (BOWTIE2_Q30.out.bam, outdir,samtools_sort_args)
+        } else {
+            SAMTOOLS_SORT                       (BOWTIE2.out.bam, outdir,samtools_sort_args)
+        }
 
         // Run Picard MarkDupl or not? Usually yes, but in some cases (DamID, CAtaDA), we don't need that
         if (!params.skip_markdupl){
@@ -224,13 +233,20 @@ workflow {
                             ).collect()
             }
 
-            multiqc_ch = multiqc_ch.mix(
-                            BOWTIE2.out.stats.ifEmpty([])
-                            ).collect()
+            if (params.unique_map){
+                multiqc_ch = multiqc_ch.mix(BOWTIE2_Q30.out.stats.ifEmpty([])).collect()
+            } else {
+                multiqc_ch = multiqc_ch.mix(BOWTIE2.out.stats.ifEmpty([])).collect()
+            }
+
 
         } else {
 
-            multiqc_ch = BOWTIE2.out.stats.ifEmpty([]).collect()
+            if (params.unique_map){
+                multiqc_ch = BOWTIE2_Q30.out.stats.ifEmpty([]).collect()
+            } else {
+                multiqc_ch = BOWTIE2.out.stats.ifEmpty([]).collect()
+            }
 
         }
 
