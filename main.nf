@@ -184,22 +184,21 @@ workflow {
             FASTQC2                         (TRIM_GALORE.out.reads, outdir, fastqc_args)
             if (params.unique_map){
                 BOWTIE2_Q30                 (TRIM_GALORE.out.reads, outdir, bowtie2_args)
+                SAMTOOLS_SORT               (BOWTIE2_Q30.out.bam, outdir,samtools_sort_args)
             } else {
                 BOWTIE2                     (TRIM_GALORE.out.reads, outdir, bowtie2_args)
+                SAMTOOLS_SORT               (BOWTIE2.out.bam, outdir,samtools_sort_args)
 			}
         } else {
             if (params.unique_map){
                 BOWTIE2_Q30                 (file_ch, outdir, bowtie2_args)
+                SAMTOOLS_SORT               (BOWTIE2_Q30.out.bam, outdir,samtools_sort_args)
             } else {
                 BOWTIE2                     (file_ch, outdir, bowtie2_args)
+                SAMTOOLS_SORT               (BOWTIE2.out.bam, outdir,samtools_sort_args)
 			}
         }
 
-        if (params.unique_map){
-            SAMTOOLS_SORT                       (BOWTIE2_Q30.out.bam, outdir,samtools_sort_args)
-        } else {
-            SAMTOOLS_SORT                       (BOWTIE2.out.bam, outdir,samtools_sort_args)
-        }
 
         // Run Picard MarkDupl or not? Usually yes, but in some cases (DamID, CAtaDA), we don't need that
         if (!params.skip_markdupl){
