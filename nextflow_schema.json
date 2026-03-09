@@ -94,7 +94,7 @@
                     "fa_icon": "fas fa-file-code",
                     "description": "Suppress SAM records for unaligned reads.",
                     "default": true
-                }
+                },
                 
                 "bowtie2_map_unique": {
                     "type": "boolean",
