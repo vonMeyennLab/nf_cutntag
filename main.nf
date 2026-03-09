@@ -31,7 +31,6 @@ if(params.outdir){
 params.skip_qc             = false
 params.skip_markdupl       = false
 params.skip_fastq_screen   = true
-params.unique_map          = false
 
 
 /* ========================================================================================
